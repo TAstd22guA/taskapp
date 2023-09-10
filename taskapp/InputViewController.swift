@@ -49,6 +49,7 @@ class InputViewController: UIViewController {
          Realmにはaddしないようにする
          */
         
+      
         //カテゴリが空白がどうか確認する
         if self.categoryTextField.text! != "" {
             
@@ -64,11 +65,13 @@ class InputViewController: UIViewController {
                     
                     //カテゴリーを追加
                     self.task.category = self.categoryTextField.text!
+                    setNotification(task: task)   // 追加
                 }
+
             }
             
         }
-        setNotification(task: task)   // 追加
+
         super.viewWillDisappear(animated)
     }
     
